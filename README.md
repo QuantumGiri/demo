@@ -205,3 +205,13 @@ Events:
   Type     Reason   Age                      From     Message
   ----     ------   ----                     ----     -------
   Warning  BackOff  3m57s (x96426 over 13d)  kubelet  Back-off restarting failed container pgid-integrafe-deployment-chart in pod integrafe-deployment-one-master-67567f96c6-d9fvw_integrafe-dev(5702b6f6-7ab0-4fab-8f5a-ebe600807c92)
+
+
+
+
+
+
+
+
+
+pods_status=$(kubectl get pods --all-namespaces -o custom-columns="NAMESPACE:.metadata.namespace,POD:.metadata.name,STATUS:.status.phase,CONTAINERS:.status.containerStatuses[*].state.waiting.reason" --no-headers)
